@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+body{
+  background-color:black;
+  color:white;
+}
+.result{
+color:white;
+font-size:26px;
+}
+.button
+{
+  height:60px;
+  width:60px;
+  border-radius:35px;
+  font-size:26px;
+  background-color: rgb(51, 51, 51);
+  color:white;
+
+}
+.butt
+{
+  height:60px;
+  width:60px;
+  border-radius:35px;
+  font-size:20px;
+  background-color: rgb(51, 51, 51); 
+  color:white;
+
+}
+.butt1
+{
+  height:60px;
+  width:60px;
+  border-radius:35px;
+  font-size:23px;
+  background-color:rgb(254, 160, 10);
+  color:white;
+}
+</style>
+</head>
+
+
+<body>
+
+<p class="js-result result" ></p>
+<p>
+<button class="button" onclick="upCal('1');
+" >1</button>
+<button class="button" onclick="upCal('2');
+" >2</button>
+<button class="button" onclick="upCal('3');
+" >3</button>
+<button class="butt1" onclick="upCal('+');
+" >+</button>
+</p>
+<p>
+<button class="button" onclick="upCal('4');
+" >4</button>
+<button class="button" onclick="upCal('5');
+" >5</button>
+<button class="button" onclick="upCal('6');
+" >6</button>
+<button class="butt1" onclick="upCal('-');
+" >-</button>
+</p>
+<p>
+<button class="button" onclick="upCal('7');
+" >7</button>
+<button class="button" onclick="upCal('8');
+" >8</button>
+<button class="button" onclick="upCal('9');
+" >9</button>
+<button class="butt1" onclick="upCal('*');
+" >*</button>
+</p>
+<p>
+<button class="button" onclick="upCal('0');
+" >0</button>
+<button class="button" onclick="upCal('.');
+" >.</button>
+<button class="button" onclick="cal = eval(cal);
+displaycal();
+localStorage.setItem('cal',cal);
+" >=</button>
+<button class="butt1" onclick="upCal('/');
+" >/</button>
+</p>
+<p>
+<button class="butt" onclick="cal = '';
+displaycal();
+localStorage.setItem('cal', cal);
+" >Clear</button>
+</p>
+
+<script>
+
+let cal= localStorage.getItem('cal') ;
+displaycal();
+function upCal(value)
+{
+  cal=cal+value;
+  displaycal();
+  localStorage.setItem('cal', cal);
+}
+
+function displaycal()
+{
+ document.querySelector('.js-result').innerHTML =cal;
+}
+
+</script>
+</body>
+</html>
